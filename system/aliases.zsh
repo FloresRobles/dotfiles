@@ -9,4 +9,4 @@ then
   alias la='gls -A --color'
 fi
 
-alias dma="cd ~/dma/dma-ios"
+alias dma="cd ~/Code/dma/dma-ios"
