@@ -10,12 +10,12 @@ sudo -v
 if [[ ! -d ~/.dotfiles ]]; then
   new_dotfiles_install=1
   # ~/.dotfiles doesn't exist? Clone it!
-  e_header "Downloading dotfiles"
+  echo "Downloading dotfiles"
   git clone --recursive git://github.com/floresrobles/dotfiles.git ~/.dotfiles
   cd ~/.dotfiles
 else
   # Make sure we have the latest files.
-  e_header "Updating dotfiles"
+  echo "Updating dotfiles"
   cd ~/.dotfiles
   git pull
   git submodule update --init --recursive --quiet
