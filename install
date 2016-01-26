@@ -21,7 +21,11 @@ else
   git submodule update --init --recursive --quiet
 fi
 
+# holman's bootstrap
 bash script/bootstrap
+
+# oh my zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # XCode permission
 # TODO: install XCode, lol, and accept license
