@@ -26,4 +26,4 @@ bash script/bootstrap
 # XCode permission
 # TODO: install XCode, lol, and accept license
 echo "If next fails, install xcode and open it"
-echo sudo -S  xcodebuild -license accept
+sudo -S  xcodebuild -license accept
