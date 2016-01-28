@@ -1,7 +1,9 @@
+#!/bin/sh
+
 if [ "$1" = "" ]
 then
   echo "Usage: gdb <new branch name>"
 else
-  gdev
+  git-dev
   git checkout -b $1
 fi
