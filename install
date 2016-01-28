@@ -24,6 +24,9 @@ fi
 # holman's bootstrap
 bash script/bootstrap
 
+# change shell
+chsh -s /bin/zsh
+
 # oh my zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
