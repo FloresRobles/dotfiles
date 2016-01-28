@@ -24,13 +24,10 @@ fi
 # holman's bootstrap
 bash script/bootstrap
 
-# change shell
-chsh -s /bin/zsh
-
-# oh my zsh
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
 # XCode permission
 # TODO: install XCode, lol, and accept license
 echo "If next fails, install xcode and open it"
 sudo xcodebuild -license accept
+
+# oh my zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
