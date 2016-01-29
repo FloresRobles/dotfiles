@@ -1,0 +1,13 @@
+#!/bin/sh
+
+cd "$HOME/.dotfiles"
+
+git add .
+
+if [ "$1" = "" ] ; then
+  git commit -m "updated with dot-push-changes"
+else
+  git commit -m "$1"
+fi
+
+git push
