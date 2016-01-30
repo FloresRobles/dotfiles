@@ -6,6 +6,10 @@
 # to make sure you're on the latest and greatest.
 export DZSH=$HOME/.dotfiles
 
+# Update dotfiles
+cd "$DZSH"
+git pull
+
 # Set OS X defaults
 $DZSH/osx/set-defaults.sh
 
