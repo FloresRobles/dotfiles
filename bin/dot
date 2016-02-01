@@ -23,3 +23,6 @@ brew update
 # Install software
 echo "› $DZSH/script/install"
 $DZSH/script/install
+
+# Restart shell
+exec zsh -l
