@@ -11,3 +11,4 @@ fi
 
 alias dma="cd ~/Code/dma/dma-ios"
 alias ag="alias | grep "
+alias wfip="ipconfig getifaddr en1"
