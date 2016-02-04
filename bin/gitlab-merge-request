@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# Send a merge request to gitlab of the current branch.
+
+if [ "$1" = "" ]
+then
+  echo "Missing project id"
+else
+  branch=$(git rev-parse --abbrev-ref HEAD)
+  target='develop'
+  if [ "$2" = "master" ]
+  then
+    target='master'
+  fi
+  gitlab create_merge_request 8 "$branch" "{source_branch: '$branch', target_branch: '$target'}"
+fi
