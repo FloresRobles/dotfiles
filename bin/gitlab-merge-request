@@ -2,9 +2,15 @@
 #
 # Send a merge request to gitlab of the current branch.
 
+if ! gem spec gitlab > /dev/null 2>&1; then
+  echo "Gem gitlab is not installed!"
+  exit 1
+fi
+
 if [ "$1" = "" ]
 then
   echo "Missing project id"
+  exit 1
 else
   branch=$(git rev-parse --abbrev-ref HEAD)
   target='develop'
@@ -12,5 +18,5 @@ else
   then
     target='master'
   fi
-  gitlab create_merge_request 8 "$branch" "{source_branch: '$branch', target_branch: '$target'}"
+  gitlab create_merge_request $1 "$branch" "{source_branch: '$branch', target_branch: '$target'}"
 fi
