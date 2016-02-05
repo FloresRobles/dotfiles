@@ -33,9 +33,5 @@ $DZSH/homebrew/install.sh 2>&1
 echo "› brew update"
 brew update
 
-# Install software
-echo "› $DZSH/script/install"
-$DZSH/script/install
-
 # Reload shell
 . ~/.zshrc
