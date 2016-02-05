@@ -12,26 +12,24 @@ git pull
 git submodule update --init --recursive --quiet
 
 # find the installers and run them iteratively
-echo "› installers"
+echo "› installing stuff"
 find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
 
 # holman's bootstrap
 echo "› holman's bootstrap"
 bash script/bootstrap
 
+# Upgrade homebrew
+echo "› brew update"
+brew update
+
 # Run Homebrew through the Brewfile
 echo "› brew bundle"
 brew bundle
 
 # Set OS X defaults
+echo "› set defaults"
 $DZSH/osx/set-defaults.sh
-
-# Install homebrew
-$DZSH/homebrew/install.sh 2>&1
-
-# Upgrade homebrew
-echo "› brew update"
-brew update
 
 # Reload shell
 . ~/.zshrc
