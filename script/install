@@ -1,14 +1,15 @@
-#!/usr/bin/env bash
-#
-# Run all dotfiles installers.
+#!/bin/bash
 
-set -e
+set -euf -o pipefail
 
-cd "$(dirname $0)"/..
+# Initialize.
+echo "› ~/.dotfiles"
+if [[ ! -d ~/.dotfiles ]]; then
+  new_dotfiles_install=1
+  # ~/.dotfiles doesn't exist? Clone it!
+  echo "Downloading dotfiles"
+  git clone --recursive https://github.com/floresrobles/dotfiles.git ~/.dotfiles
+  cd ~/.dotfiles
+fi
 
-# Run Homebrew through the Brewfile
-echo "› brew bundle"
-brew bundle
-
-# find the installers and run them iteratively
-find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
+sh bin/dot 

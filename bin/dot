@@ -9,6 +9,19 @@ export DZSH=$HOME/.dotfiles
 # Update dotfiles
 cd "$DZSH"
 git pull
+git submodule update --init --recursive --quiet
+
+# find the installers and run them iteratively
+echo "› installers"
+find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
+
+# holman's bootstrap
+echo "› holman's bootstrap"
+bash script/bootstrap
+
+# Run Homebrew through the Brewfile
+echo "› brew bundle"
+brew bundle
 
 # Set OS X defaults
 $DZSH/osx/set-defaults.sh
