@@ -4,6 +4,7 @@ tap 'caskroom/cask'
 tap 'homebrew/bundle'
 
 brew 'ack'
+brew 'awscli'
 brew 'coreutils'
 brew 'grc'
 brew 'imagemagick'
