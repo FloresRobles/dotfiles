@@ -22,7 +22,7 @@ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.serve
 sudo pmset -a standbydelay 14400
 
 # Disable the sound effects on boot
-sudo nvram SystemAudioVolume=" "
+sudo nvram SystemAudioVolume=%80
 
 # Let this user unlock the disk
 if ! [[ $(sudo fdesetup list) =~ $(whoami) ]]
