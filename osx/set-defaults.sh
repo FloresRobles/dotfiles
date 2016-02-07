@@ -432,6 +432,9 @@ defaults write com.apple.dock wvous-br-modifier -int 0
 defaults write com.apple.Safari UniversalSearchEnabled -bool false
 defaults write com.apple.Safari SuppressSearchSuggestions -bool true
 
+# Privacy: don’t allow safari notifications
+defaults write CanPromptForPushNotifications -bool false
+
 # Press Tab to highlight each item on a web page
 defaults write com.apple.Safari WebKitTabToLinksPreferenceKey -bool true
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2TabsToLinks -bool true
