@@ -24,6 +24,12 @@ sudo pmset -a standbydelay 14400
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
 
+# Let this user unlock the disk
+if ! [[ $(sudo fdesetup list) =~ $(whoami) ]]
+then
+	sudo fdesetup add -usertoadd $(whoami)
+fi
+
 # Disable transparency in the menu bar and elsewhere on Yosemite
 defaults write com.apple.universalaccess reduceTransparency -bool true
 
@@ -254,7 +260,7 @@ defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
 # Finder: show hidden files by default
-defaults write com.apple.finder AppleShowAllFiles -bool true
+#defaults write com.apple.finder AppleShowAllFiles -bool true
 
 # Finder: show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
@@ -349,7 +355,7 @@ defaults write com.apple.dock show-process-indicators -bool true
 # Wipe all (default) app icons from the Dock
 # This is only really useful when setting up a new Mac, or if you don’t use
 # the Dock to launch apps.
-#defaults write com.apple.dock persistent-apps -array 
+#defaults write com.apple.dock persistent-apps -array
 
 # Show only open applications in the Dock
 #defaults write com.apple.dock static-only -bool true
