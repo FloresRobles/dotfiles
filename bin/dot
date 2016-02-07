@@ -32,4 +32,4 @@ echo "› set defaults"
 $DZSH/osx/set-defaults.sh
 
 # Reload shell
-source ~/.zshrc
+echo "You may want to `reload!` now!"
