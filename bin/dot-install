@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# dot
+#
+# `dot` handles installation, updates, things like that. Run it periodically
+# to make sure you're on the latest and greatest.
+export DZSH=$HOME/.dotfiles
+
+# find the installers and run them iteratively
+echo "› installing stuff"
+find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
+
+# holman's bootstrap
+echo "› holman's bootstrap"
+bash script/bootstrap
+
+# Upgrade homebrew
+echo "› brew update"
+brew update
+
+# Run Homebrew through the Brewfile
+echo "› brew bundle"
+brew bundle
+
+# Set OS X defaults
+echo "› set defaults"
+$DZSH/osx/set-defaults.sh
+
+# Reload shell
+echo "You may want to reload! now!"
