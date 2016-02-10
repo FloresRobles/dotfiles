@@ -26,5 +26,9 @@ brew bundle
 echo "› set defaults"
 $DZSH/osx/set-defaults.sh
 
+# find the installers and run them iteratively
+echo "› configuring stuff"
+find . -name configure.sh | while read configurer ; do sh -c "${configurer}" ; done
+
 # Reload shell
 echo "You may want to reload! now!"
