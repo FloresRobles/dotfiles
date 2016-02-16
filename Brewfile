@@ -9,6 +9,7 @@ brew 'coreutils'
 brew 'grc'
 brew 'imagemagick'
 brew 'libgit2'
+brew 'mysql'
 brew 'openssl'
 brew 'wget'
 
