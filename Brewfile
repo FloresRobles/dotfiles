@@ -13,7 +13,6 @@ brew 'mysql'
 brew 'openssl'
 brew 'wget'
 
-cask '1password'
 cask 'aerial'
 cask 'atom'
 cask 'appcleaner'
