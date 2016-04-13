@@ -5,12 +5,12 @@ dma-artifacts-slack() {
   else
     echo "Syncing the files...\n"
     dma-artifacts
-    read -p "$(dma-artifacts-list)\nDoes this looks ok?" -n 1 -s char
-    if [ "$char" = "y" ]
-    then
-      dma-artifacts-list | xargs -L 1 slackcat --channel $1
-    else
-      echo "You better fix it!\n"
-    fi
+    echo "$(dma-artifacts-list)\nDoes this looks ok?"
+    select yn in "Yes" "No"; do
+        case $yn in
+            Yes ) dma-artifacts-list | xargs -L 1 slackcat --channel $1; break;;
+            No ) echo "You better fix it!\n"; break;;
+        esac
+    done
   fi
 }
