@@ -9,7 +9,7 @@ if [[ ! -d ~/.dotfiles ]]; then
   # ~/.dotfiles doesn't exist? Clone it!
   echo "Downloading dotfiles"
   git clone --recursive https://github.com/floresrobles/dotfiles.git ~/.dotfiles
-  cd ~/.dotfiles
 fi
 
+cd ~/.dotfiles
 sh ./bin/dot-install
