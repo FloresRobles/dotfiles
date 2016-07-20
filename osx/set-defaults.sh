@@ -27,6 +27,9 @@ then
 	sudo fdesetup add -usertoadd $(whoami)
 fi
 
+# Show battery percentage
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+
 # Disable transparency in the menu bar and elsewhere on Yosemite
 defaults write com.apple.universalaccess reduceTransparency -bool true
 
@@ -99,6 +102,7 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseButtonMode -
 defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseOneFingerDoubleTapGesture -int 1
 defaults -currentHost write NSGlobalDomain com.apple.mouse.scaling -float 3
 defaults write NSGlobalDomain com.apple.mouse.scaling -float 3
+defaults write NSGlobalDomain com.apple.trackpad.scaling -float 5
 defaults write "Apple Global Domain" AppleEnableMouseSwipeNavigateWithScrolls -int 1
 
 # Trackpad: enable tap to click for this user and for the login screen
@@ -385,6 +389,9 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 
 # Add a context menu item for showing the Web Inspector in web views
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+
+# Enable “Do Not Track”
+defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
 
 ###############################################################################
 # Mail                                                                        #
