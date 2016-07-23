@@ -11,3 +11,4 @@ fi
 
 alias ag="alias | grep "
 alias wfip="ipconfig getifaddr en1"
+alias saurio="ssh -i ~/.keys/personalaws.pem ubuntu@52.22.11.248"
