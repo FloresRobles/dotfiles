@@ -14,14 +14,6 @@ find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
 echo "› holman's bootstrap"
 bash script/bootstrap
 
-# Upgrade homebrew
-echo "› brew update"
-brew update
-
-# Run Homebrew through the Brewfile
-echo "› brew bundle"
-brew bundle
-
 # find the installers and run them iteratively
 echo "› configuring stuff"
 find . -name configure.sh | while read configurer ; do sh -c "${configurer}" ; done
